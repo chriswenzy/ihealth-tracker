@@ -7,7 +7,7 @@ import {
   AsyncStorage
 } from 'react-native'
 import { goToAuth } from './navigation'
-import {Navigation} from 'react-native-navigation';
+import {Navigation} from 'react-navigation';
 
 import { USER_KEY } from './config'
 
@@ -39,11 +39,7 @@ export default class Home extends React.Component {
         />
         <Button
           onPress={() => {
-            Navigation.push(this.props.componentId, {
-              component: {
-                name: 'Screen2',
-              }
-            });
+            this.props.navigation.navigate('Screen2');
           }}
           title="View next screen"
         />

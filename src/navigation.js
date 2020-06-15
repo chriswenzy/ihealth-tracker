@@ -1,4 +1,4 @@
-import { Navigation } from 'react-native-navigation'
+import { Navigation } from 'react-navigation'
 
 export const goToAuth = () => Navigation.setRoot({
   root: {
@@ -12,7 +12,7 @@ export const goToAuth = () => Navigation.setRoot({
               bottomTab: {
                 fontSize: 12,
                 text: 'Sign In',
-                icon: require('./.assets/signin.png')
+                icon: require('../assets/signin.png')
               }
             }
           },

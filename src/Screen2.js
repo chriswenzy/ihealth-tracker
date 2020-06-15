@@ -5,30 +5,18 @@ import {
   Button,
   StyleSheet,
 } from 'react-native'
-import {Navigation} from 'react-native-navigation';
+import {Navigation} from 'react-navigation';
 
-export default class Screen2 extends React.Component {
-  static get options() {
-    return {
-      topBar: {
-        title: {
-          text: 'Screen 2'
-        },
-      }
-    };
-  }
-  render() {
+export default function Screen2 ({navigation}) {
+  
     return (
       <View style={styles.container}>
-        <Text>Screen 2</Text>
-        <Button
-          onPress={() => Navigation.pop(this.props.componentId)}
-          title="Go Back"
-        />
+        <Text onPress={()=>{navigation.navigate('SignIn')}}>Sign in </Text>
+        <Text onPress={()=>{navigation.navigate('SignUp')}}>Sign up </Text>
+
       </View>
     )
   }
-}
 
 const styles = StyleSheet.create({
   container: {
