@@ -13,16 +13,16 @@ import { USER_KEY } from './config'
 
 export default class SignIn extends React.Component {
   state = {
-    username: '', password: ''
+    email: '', password: ''
   }
   onChangeText = (key, value) => {
     this.setState({ [key]: value })
   }
   signIn = async () => {
-    const { username, password } = this.state
+    const { email, password } = this.state
     try {
-       // login with provider
-       const user = await AsyncStorage.setItem(USER_KEY, username)
+      
+       const user = await AsyncStorage.setItem(USER_KEY, email)
        console.log('user successfully signed in!', user)
        goHome()
     } catch (err) {
@@ -34,11 +34,11 @@ export default class SignIn extends React.Component {
       <View style={styles.container}>
         <TextInput
           style={styles.input}
-          placeholder='Username'
+          placeholder='Email'
           autoCapitalize="none"
           autoCorrect={false}
           placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('username', val)}
+          onChangeText={val => this.onChangeText('email', val)}
         />
         <TextInput
           style={styles.input}
@@ -63,11 +63,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     height: 55,
-    backgroundColor: '#42A5F5',
+    backgroundColor: 'red',
     margin: 10,
     color: 'white',
     padding: 8,
-    borderRadius: 14
+    borderRadius: 5,
   },
   container: {
     flex: 1,
