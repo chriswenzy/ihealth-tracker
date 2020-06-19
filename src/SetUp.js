@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   View,
-  Button,
+  Picker,
   TextInput,
   StyleSheet,
   TouchableOpacity,
@@ -37,41 +37,52 @@ export default class SignUp extends React.Component {
           <Text style={styles.titleText}>Account Setup</Text>
           <View >
 
-              <Text style={styles.label}>Name</Text>
+              <Text style={styles.label}>Home Address</Text>
               <TextInput
                 style={styles.input}
-                placeholder='Username'
+                placeholder='Please enter home address here'
                 autoCapitalize="none"
                 placeholderTextColor='#B3B4B9'
-                onChangeText={val => this.onChangeText('username', val)}
+                onChangeText={val => this.onChangeText('Home', val)}
               />
+             
+             <Text style={styles.label}>Town</Text>
               <TextInput
                 style={styles.input}
-                placeholder='Password'
-                secureTextEntry={true}
+                placeholder='Please enter town here'
                 autoCapitalize="none"
                 placeholderTextColor='#B3B4B9'
-                onChangeText={val => this.onChangeText('password', val)}
+                onChangeText={val => this.onChangeText('town', val)}
               />
+
+              <Text style={styles.label}>State</Text>
               <TextInput
                 style={styles.input}
-                placeholder='Email'
+                placeholder='Please enter state here'
                 autoCapitalize="none"
                 placeholderTextColor='#B3B4B9'
-                onChangeText={val => this.onChangeText('email', val)}
+                onChangeText={val => this.onChangeText('state', val)}
               />
+
+              <Text style={styles.label}>Country</Text>
               <TextInput
                 style={styles.input}
-                placeholder='Phone Number'
+                placeholder='Please enter country here'
                 autoCapitalize="none"
                 placeholderTextColor='#B3B4B9'
-                onChangeText={val => this.onChangeText('phone_number', val)}
+                onChangeText={val => this.onChangeText('country', val)}
               />
-              <Text style={styles.label1}
-              onPress={() => {
-                this.props.navigation.navigate('SignIn');
-              }}             
-              >Already have an account? Log In</Text>
+
+              <Text style={styles.label}>Set Reminder</Text>
+              <Picker
+                  style={styles.input}
+                >
+                  <Picker.Item label="15mins Interval" value="15mins" />
+                  <Picker.Item label="30mins Interval" value="30min" />
+                  <Picker.Item label="45mins Interval" value="45min" />
+                  <Picker.Item label="60mins Interval" value="60min" />
+
+              </Picker>
 
           <View style={styles.container}>
               <View style={styles.btnContainer}>
@@ -80,7 +91,7 @@ export default class SignUp extends React.Component {
                     onPress={() => {
                       this.props.navigation.navigate('SignIn');
                     }}>
-                    Register
+                    Submit
                   </Text>
               </View>
           </View>
@@ -105,7 +116,7 @@ const styles = StyleSheet.create({
   },
 
   img:{
-    marginTop: -80,
+    marginTop: -40,
     },
 
   logo:{
@@ -114,7 +125,7 @@ const styles = StyleSheet.create({
     height: 240,
     resizeMode: "contain",
     alignSelf: "center",
-    marginTop: -60,
+    marginTop: -30,
     },
 
   titleText:{
@@ -129,7 +140,7 @@ const styles = StyleSheet.create({
   label:{
    marginLeft: 10, 
    color: '#364471',
-   fontSize: 18,
+   fontSize: 10,
    fontWeight: "bold",
    marginTop: 10,
   },
@@ -166,7 +177,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.30,
     shadowRadius: 4.65,
     elevation: 8,
-    marginTop: 100,  
+    marginTop: 30, 
+    marginBottom: 10, 
   },
 
   btnText:{
