@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   View,
+  Button,
   TextInput,
   StyleSheet,
   TouchableOpacity,
@@ -33,46 +34,39 @@ export default class SignUp extends React.Component {
             <Image source={require('../assets/logo.png')} style={styles.logo}  />
           </View>
 
-          <Text style={styles.titleText}>Create account</Text>
+          <Text style={styles.titleText}>Account Setup</Text>
           <View >
 
-              <Text style={styles.label}>Username</Text>
+              <Text style={styles.label}>Name</Text>
               <TextInput
                 style={styles.input}
-                placeholder='Please enter username here'
+                placeholder='Username'
                 autoCapitalize="none"
                 placeholderTextColor='#B3B4B9'
                 onChangeText={val => this.onChangeText('username', val)}
               />
-
-              <Text style={styles.label}>Email</Text>
               <TextInput
                 style={styles.input}
-                placeholder='Please enter email here'
-                autoCapitalize="none"
-                placeholderTextColor='#B3B4B9'
-                onChangeText={val => this.onChangeText('email', val)}
-              />
-
-              <Text style={styles.label}>Phone Number</Text>
-              <TextInput
-                style={styles.input}
-                placeholder='Please enter phone number here'
-                autoCapitalize="none"
-                placeholderTextColor='#B3B4B9'
-                onChangeText={val => this.onChangeText('phone_number', val)}
-              />
-
-              <Text style={styles.label}>Password</Text>
-              <TextInput
-                style={styles.input}
-                placeholder='Please enter password here'
+                placeholder='Password'
                 secureTextEntry={true}
                 autoCapitalize="none"
                 placeholderTextColor='#B3B4B9'
                 onChangeText={val => this.onChangeText('password', val)}
               />
-
+              <TextInput
+                style={styles.input}
+                placeholder='Email'
+                autoCapitalize="none"
+                placeholderTextColor='#B3B4B9'
+                onChangeText={val => this.onChangeText('email', val)}
+              />
+              <TextInput
+                style={styles.input}
+                placeholder='Phone Number'
+                autoCapitalize="none"
+                placeholderTextColor='#B3B4B9'
+                onChangeText={val => this.onChangeText('phone_number', val)}
+              />
               <Text style={styles.label1}
               onPress={() => {
                 this.props.navigation.navigate('SignIn');
@@ -84,7 +78,7 @@ export default class SignUp extends React.Component {
                     <Text
                     style={styles.btnText }
                     onPress={() => {
-                      this.props.navigation.navigate('SetUp');
+                      this.props.navigation.navigate('SignIn');
                     }}>
                     Register
                   </Text>
@@ -120,6 +114,7 @@ const styles = StyleSheet.create({
     height: 240,
     resizeMode: "contain",
     alignSelf: "center",
+    marginTop: -60,
     },
 
   titleText:{
@@ -134,9 +129,9 @@ const styles = StyleSheet.create({
   label:{
    marginLeft: 10, 
    color: '#364471',
-   fontSize: 15,
+   fontSize: 18,
    fontWeight: "bold",
-   marginTop: 7,
+   marginTop: 10,
   },
 
   label1:{
@@ -158,9 +153,11 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#364471',
     paddingVertical:10,
+    paddingHorizontal:10,
     borderRadius: 25,
     textAlign: 'center',
     width: 200,
+
     shadowColor: "#000",
     shadowOffset: {
 	  width: 0,
@@ -169,12 +166,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.30,
     shadowRadius: 4.65,
     elevation: 8,
-    marginTop: 30,  
+    marginTop: 100,  
   },
 
   btnText:{
     color: 'white',
     fontSize: 18,
+    
     textAlign: "center",
   },
 })
