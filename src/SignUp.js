@@ -6,30 +6,19 @@ import {
   TouchableOpacity,
   Text,
   Image,
+  ScrollView,
 } from 'react-native'
+import Constants from 'expo-constants';
 
 export default class SignUp extends React.Component {
-  state = {
-    username: '', password: '', email: '', phone_number: ''
-  }
-  onChangeText = (key, val) => {
-    this.setState({ [key]: val })
-  }
-  signUp = async () => {
-    const { username, password, email, phone_number } = this.state
-    try {
-      // here place your signup logic
-      console.log('user successfully signed up!: ', success)
-    } catch (err) {
-      console.log('error signing up: ', err)
-    }
-  }
- 
+  
   render() {
     return (
-      <TouchableOpacity style={styles.container} >
+      
 
-          <View style={styles.img}> 
+          <ScrollView style={styles.container} > 
+         
+             <View style={styles.img}> 
             <Image source={require('../assets/logo.png')} style={styles.logo}  />
           </View>
 
@@ -79,19 +68,20 @@ export default class SignUp extends React.Component {
               }}             
               >Already have an account? Log In</Text>
 
-          <View style={styles.container}>
-              <View style={styles.btnContainer}>
-                    <Text
-                    style={styles.btnText }
-                    onPress={() => {
-                      this.props.navigation.navigate('SetUp');
-                    }}>
-                    Register
-                  </Text>
-              </View>
+            <View style={styles.container}>
+                <View style={styles.btnContainer}>
+                      <Text
+                      style={styles.btnText }
+                      onPress={() => {
+                        this.props.navigation.navigate('SetUp');
+                      }}>
+                      Register
+                    </Text>
+                </View>
+            </View>
           </View>
-          </View>
-      </TouchableOpacity>
+          </ScrollView>         
+     
     )
   }
 }
@@ -107,11 +97,11 @@ const styles = StyleSheet.create({
     color: 'black',
     padding: 8,
     borderRadius: 5,
-
   },
 
   img:{
     marginTop: -80,
+    flex: 1,
     },
 
   logo:{
@@ -125,7 +115,6 @@ const styles = StyleSheet.create({
   titleText:{
       fontSize: 20,
       fontWeight: "bold",
-      lineHeight: 10,
       textAlign: "center",
       color: '#364471',
       marginBottom: 20,
@@ -148,10 +137,11 @@ const styles = StyleSheet.create({
    },
 
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    // flex: 1,
+    // justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+    height: "screenHeight",
   },
 
   btnContainer: {
@@ -169,7 +159,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.30,
     shadowRadius: 4.65,
     elevation: 8,
-    marginTop: 30,  
+    marginTop: 30, 
+    marginBottom: 30, 
   },
 
   btnText:{

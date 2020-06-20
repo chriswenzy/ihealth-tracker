@@ -8,29 +8,10 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native'
-import { goToAuth } from './navigation'
-import {Navigation} from 'react-navigation';
 
-import { USER_KEY } from './config'
 
 export default class Home extends React.Component {
-  static get options() {
-    return {
-      topBar: {
-        title: {
-          text: 'Home'
-        },
-      }
-    };
-  }
-  logout = async () => {
-    try {
-      await AsyncStorage.removeItem(USER_KEY)
-      goToAuth()
-    } catch (err) {
-      console.log('error signing out...: ', err)
-    }
-  }
+ 
   render() {
     return (
      <TouchableOpacity onPress={this.props.onPress} style={styles.container} >
@@ -80,11 +61,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffff',
-    justifyContent: "space-evenly",
-
   },
   img:{
-    marginTop: -130,
+    marginTop: -10,
+    flex: 1,
   },
   logo:{
     flex: 1,
@@ -97,7 +77,6 @@ const styles = StyleSheet.create({
   titleText:{
     fontSize: 20,
     fontWeight: "bold",
-    lineHeight: 10,
     textAlign: "left",
     marginLeft: 30,
     color: '#364471',
@@ -127,7 +106,7 @@ shadowRadius: 4.65,
 
 elevation: 8,
 
-    marginTop: 100,  
+    marginTop: 10,  
   },
 
   btnContainer1: {
@@ -155,12 +134,14 @@ elevation: 8,
     color: '#364471',
     fontSize: 18,
     width: 200,
+    textAlign: "center",
   },
 
   btnText1:{
     color: 'white',
     fontSize: 18,
     width: 200,
+    textAlign: "center",
     
   }
 })

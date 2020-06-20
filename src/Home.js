@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native'
-import {Navigation} from 'react-navigation';
+// import {Navigation} from 'react-navigation';
 
 export default function Screen2 ({navigation}) {
   
@@ -68,10 +68,10 @@ const styles = StyleSheet.create({
 
   },
 
-  userText:{
-    marginLeft: 10,
-    color: 'white',
-    fontSize: 10,   
-  }
+  // userText:{
+  //   marginLeft: 10,
+  //   color: 'white',
+  //   fontSize: 10,   
+  // }
 
 })

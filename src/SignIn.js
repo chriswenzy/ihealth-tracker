@@ -9,27 +9,8 @@ import {
   Image
 } from 'react-native'
 
-import { goHome } from './navigation'
-import { USER_KEY } from './config'
-
 export default class SignIn extends React.Component {
-  state = {
-    email: '', password: ''
-  }
-  onChangeText = (key, value) => {
-    this.setState({ [key]: value })
-  }
-  signIn = async () => {
-    const { email, password } = this.state
-    try {
-      
-       const user = await AsyncStorage.setItem(USER_KEY, email)
-       console.log('user successfully signed in!', user)
-       goHome()
-    } catch (err) {
-      console.log('error:', err)
-    }
-  }
+
   render() {
     return (
 
@@ -39,7 +20,9 @@ export default class SignIn extends React.Component {
             <Image source={require('../assets/logo.png')} style={styles.logo}  />
         </View>
 
-        <Text style={styles.titleText}>Welcome back</Text>
+        <View style={styles.textBox} > 
+          <Text style={styles.titleText} >Welcome back</Text>
+        </View>
 
         <View >
         <Text style={styles.label}>Email</Text>
@@ -88,39 +71,51 @@ export default class SignIn extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  
+  container: {
+    flex: 1,
+    // justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  
   input: {
     width: 350,
     fontSize: 14,
     fontWeight: '500',
-    height: 55,
+    height: 50,
     backgroundColor: '#F7F7F7',
     margin: 10,
     color: 'black',
     padding: 8,
     borderRadius: 5,
-
   },
 
   img:{
-    marginTop: -130,
+    // marginTop: 10,
+    //  flex: 1,
     },
 
   logo:{
-    flex: 1,
-    width: 200,
-    height: 240,
+    // flex: 1,
+    width: 150,
+    height: 150,
     resizeMode: "contain",
     alignSelf: "center",
-    marginTop: -60,
     },
 
+    // textBox:{
+    //   marginTop:-100,
+    // },
+
     titleText:{
-      fontSize: 20,
-      fontWeight: "bold",
-      lineHeight: 10,
-      textAlign: "center",
-      color: '#364471',
-      marginBottom: 30,
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "left",
+    marginLeft: 30,
+    color: '#364471',
+    marginTop: 30,
+    marginBottom: 40,
     },
 
   label:{
@@ -128,7 +123,6 @@ const styles = StyleSheet.create({
    color: '#364471',
    fontSize: 18,
    fontWeight: "bold",
-   marginTop: 10,
   },
 
   label1:{
@@ -139,37 +133,26 @@ const styles = StyleSheet.create({
     marginTop: 10,
    },
 
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-  },
-
   btnContainer: {
-    flex:1,
     backgroundColor: '#364471',
-    paddingVertical:10,
-    paddingHorizontal:10,
+    paddingVertical:12,
+    paddingHorizontal:12,
     borderRadius: 25,
     textAlign: 'center',
-    width: 200,
-
     shadowColor: "#000",
     shadowOffset: {
 	  width: 0,
 	  height: 4,
-                },
+    },
     shadowOpacity: 0.30,
     shadowRadius: 4.65,
-    elevation: 8,
-    marginTop: 100,  
+    elevation: 8, 
+    marginTop: 70,
   },
 
   btnText:{
     color: 'white',
     fontSize: 18,
-    
-    textAlign: "center",
+    textAlign: "center",  
   },
 })
