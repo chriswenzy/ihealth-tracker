@@ -74,7 +74,7 @@ export default class SignIn extends React.Component {
                     <Text
                     style={styles.btnText }
                     onPress={() => {
-                      this.props.navigation.navigate('SignIn');
+                      this.props.navigation.navigate('Home');
                     }}>
                     Login
                   </Text>
