@@ -9,6 +9,7 @@ import SetUp from './src/SetUp';
 import NewDay from './src/NewDay';
 import Profile from './src/Profile';
 import Status from './src/CovidStatus';
+import Events from './src/Events';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ function App() {
         <Stack.Screen name="NewDay" component={NewDay} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Status" component={Status} />
+        <Stack.Screen name="Events" component={Events} />
       </Stack.Navigator>
     </NavigationContainer>
   );
