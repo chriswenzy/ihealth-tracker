@@ -14,8 +14,8 @@ export default class SignUp extends React.Component {
   
   render() {
     return (
-      <ScrollView style={styles.container} > 
-
+      <ScrollView> 
+        <View style={styles.container}>
         <View style={styles.img}> 
             <Image source={require('../assets/logo.png')} style={styles.logo}  />
           </View>
@@ -82,7 +82,7 @@ export default class SignUp extends React.Component {
               </View>
           </View>
           </View>
-      
+          </View>
       </ScrollView>
 
           

@@ -26,7 +26,7 @@ export default function Screen2({ navigation }) {
           <Text
             style={styles.btnText}
             onPress={() => {
-              this.props.navigation.navigate('#');
+              navigation.navigate('SetUp');
             }}>
             ADD NEW EVENT
           </Text>

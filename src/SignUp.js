@@ -14,9 +14,8 @@ export default class SignUp extends React.Component {
   
   render() {
     return (
-      
-
-          <ScrollView style={styles.container} > 
+          <ScrollView> 
+            <View style={styles.container}>
          
              <View style={styles.img}> 
             <Image source={require('../assets/logo.png')} style={styles.logo}  />
@@ -80,6 +79,7 @@ export default class SignUp extends React.Component {
                 </View>
             </View>
           </View>
+          </View>
           </ScrollView>         
      
     )
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
    },
 
   container: {
-    // flex: 1,
+    flex: 1,
     // justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
