@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   View,
   Text,
@@ -7,29 +7,29 @@ import {
   AsyncStorage,
   Image,
   TouchableOpacity,
-} from 'react-native'
-
+} from 'react-native';
 
 export default class Home extends React.Component {
- 
   render() {
     return (
-     <TouchableOpacity onPress={this.props.onPress} style={styles.container} >
+      <TouchableOpacity onPress={this.props.onPress} style={styles.container}>
         <View>
-        <View style={styles.img}> 
-            <Image source={require('../assets/logo.png')} style={styles.logo}  />
-        </View>
+          <View style={styles.img}>
+            <Image source={require('../assets/logo.png')} style={styles.logo} />
+          </View>
 
-        <View>
-        <Text style={styles.titleText}>Welcome</Text>
-        <Text style={styles.noteText}>Health tracking system that tracks and keeps your record in a secure environment</Text>
-        </View>
+          <View>
+            <Text style={styles.titleText}>Welcome</Text>
+            <Text style={styles.noteText}>
+              Health tracking system that tracks and keeps your record in a
+              secure environment
+            </Text>
+          </View>
 
-        <View style={styles.container}>
-
+          <View style={styles.container}>
             <View style={styles.btnContainer}>
-                <Text
-                style={styles.btnText1 }
+              <Text
+                style={styles.btnText1}
                 onPress={() => {
                   this.props.navigation.navigate('SignIn');
                 }}>
@@ -38,20 +38,18 @@ export default class Home extends React.Component {
             </View>
 
             <View style={styles.btnContainer1}>
-                <Text
-                style={styles.btnText }
+              <Text
+                style={styles.btnText}
                 onPress={() => {
                   this.props.navigation.navigate('SignUp');
                 }}>
                 Sign Up
               </Text>
             </View>
-
+          </View>
         </View>
-       
-      </View>
-     </TouchableOpacity>
-    )
+      </TouchableOpacity>
+    );
   }
 }
 
@@ -62,86 +60,85 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ffff',
   },
-  img:{
+  img: {
     marginTop: -10,
     flex: 1,
   },
-  logo:{
+  logo: {
     flex: 1,
     width: 200,
     height: 240,
-    resizeMode: "contain",
-    alignSelf: "center",
+    resizeMode: 'contain',
+    alignSelf: 'center',
     marginTop: -60,
   },
-  titleText:{
+  titleText: {
     fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "left",
+    fontWeight: 'bold',
+    textAlign: 'left',
     marginLeft: 30,
     color: '#364471',
   },
 
-  noteText:{
+  noteText: {
     fontSize: 17,
-    fontWeight: "normal",
+    fontWeight: 'normal',
     color: '#364471',
-    textAlign: "left",
+    textAlign: 'left',
     margin: 25,
   },
 
   btnContainer: {
     backgroundColor: '#364471',
-    paddingVertical:12,
-    paddingHorizontal:12,
+    paddingVertical: 12,
+    paddingHorizontal: 12,
     borderRadius: 25,
     textAlign: 'center',
-    shadowColor: "#000",
-shadowOffset: {
-	width: 0,
-	height: 4,
-},
-shadowOpacity: 0.30,
-shadowRadius: 4.65,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
 
-elevation: 8,
+    elevation: 8,
 
-    marginTop: 10,  
+    marginTop: 100,
   },
 
   btnContainer1: {
     backgroundColor: 'white',
-    paddingVertical:12,
-    paddingHorizontal:12,
+    paddingVertical: 12,
+    paddingHorizontal: 12,
     borderColor: '#364471',
     borderWidth: 2,
     borderRadius: 25,
     textAlign: 'center',
-    shadowColor: "#000",
-shadowOffset: {
-	width: 0,
-	height: 4,
-},
-shadowOpacity: 0.30,
-shadowRadius: 4.65,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
 
-elevation: 8,
+    elevation: 8,
 
     marginTop: 30,
   },
 
-  btnText:{
+  btnText: {
     color: '#364471',
     fontSize: 18,
     width: 200,
-    textAlign: "center",
+    textAlign: 'center',
   },
 
-  btnText1:{
+  btnText1: {
     color: 'white',
     fontSize: 18,
     width: 200,
-    textAlign: "center",
-    
-  }
-})
+    textAlign: 'center',
+  },
+});

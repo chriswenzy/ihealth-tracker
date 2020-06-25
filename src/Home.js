@@ -15,7 +15,13 @@ export default function Screen2({ navigation }) {
             />
 
             <View>
-              <Text style={styles.userName}>Hello Christian</Text>
+              <Text
+                style={styles.userName}
+                onPress={() => {
+                  navigation.navigate('Profile');
+                }}>
+                Hello Christian
+              </Text>
             </View>
           </View>
         </View>
@@ -26,7 +32,7 @@ export default function Screen2({ navigation }) {
           <Text
             style={styles.btnText}
             onPress={() => {
-              navigation.navigate('SetUp');
+              navigation.navigate('NewDay');
             }}>
             ADD NEW EVENT
           </Text>
