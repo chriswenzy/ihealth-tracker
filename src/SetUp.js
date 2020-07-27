@@ -80,7 +80,7 @@ export default class SignUp extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   input: {
     width: 350,
     fontSize: 14,

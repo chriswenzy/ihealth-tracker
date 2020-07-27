@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext, useState} from 'react';
 import {
   View,
   Text,
@@ -8,11 +8,17 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
+import {AuthContext} from './context/Authcontext'
 
-export default class SignIn extends React.Component {
-  render() {
+
+
+const SignIn = ({navigation})=>{
+  const[email, setemail] = useState('')
+  const[password, setpassword] = useState('')
+  const{login} = useContext(AuthContext)
+ 
     return (
-      <TouchableOpacity onPress={this.props.onPress} style={styles.container}>
+      <TouchableOpacity  style={styles.container}>
         <View style={styles.img}>
           <Image source={require('../assets/logo.png')} style={styles.logo} />
         </View>
@@ -28,8 +34,9 @@ export default class SignIn extends React.Component {
             placeholder="Please enter email here"
             autoCapitalize="characters"
             autoCorrect={false}
+            value={email}
             placeholderTextColor="#B3B4B9"
-            onChangeText={(val) => this.onChangeText('email', val)}
+            onChangeText={(val) => setemail(val)}
           />
 
           <Text style={styles.label}>Password</Text>
@@ -38,14 +45,15 @@ export default class SignIn extends React.Component {
             placeholder="Please enter password here"
             autoCapitalize="characters"
             secureTextEntry={true}
+            value={password}
             placeholderTextColor="#B3B4B9"
-            onChangeText={(val) => this.onChangeText('password', val)}
+            onChangeText={(val) => setpassword(val)}
           />
 
           <Text
             style={styles.label1}
             onPress={() => {
-              this.props.navigation.navigate('SignUp');
+              navigation.navigate('SignUp');
             }}>
             Don’t have an account? Sign up
           </Text>
@@ -54,9 +62,15 @@ export default class SignIn extends React.Component {
             <View style={styles.btnContainer}>
               <Text
                 style={styles.btnText}
-                onPress={() => {
-                  this.props.navigation.navigate('Home');
-                }}>
+                onPress={async()=>{
+                  const model ={
+                    "email": email,
+                    "password":password
+                  }
+                 const data = await login(model)
+                 navigation.navigate('Home');
+                }
+                }>
                 Login
               </Text>
             </View>
@@ -64,8 +78,10 @@ export default class SignIn extends React.Component {
         </View>
       </TouchableOpacity>
     );
-  }
+  
 }
+
+export default SignIn
 
 const styles = StyleSheet.create({
   container: {

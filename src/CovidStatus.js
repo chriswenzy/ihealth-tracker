@@ -39,7 +39,7 @@ export default function Status({ navigation }) {
 
       <View>
         <RadioGroup
-          getChecked={this.getChecked}
+          getChecked="0"
           RadioGroupStyle={{ flexDirection: 'row' }}>
           <Radio
             iconName={'lens'}

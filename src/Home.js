@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext,useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import {AuthContext} from './context/Authcontext'
 // import {Navigation} from 'react-navigation';
 
 export default function Screen2({ navigation }) {
+  const {user} = useContext(AuthContext)
+
+  useEffect(()=>{
+    if(!user){
+      return(
+        navigation.navigate('SignIn')
+      )
+    }
+
+  },[])
   return (
     <TouchableOpacity style={styles.container}>
       <View style={styles.header}>

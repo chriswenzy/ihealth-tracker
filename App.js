@@ -10,12 +10,14 @@ import NewDay from './src/NewDay';
 import Profile from './src/Profile';
 import Status from './src/CovidStatus';
 import Events from './src/Events';
+import {AuthProvider} from './src/context/Authcontext'
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
+      <AuthProvider>
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Home" component={Home} />
@@ -27,6 +29,7 @@ function App() {
         <Stack.Screen name="Status" component={Status} />
         <Stack.Screen name="Events" component={Events} />
       </Stack.Navigator>
+      </AuthProvider>
     </NavigationContainer>
   );
 }

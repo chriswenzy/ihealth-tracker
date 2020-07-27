@@ -56,7 +56,7 @@ export default function NewDay({ navigation }) {
         />
 
         <RadioGroup
-          getChecked={this.getChecked}
+          getChecked="0"
           RadioGroupStyle={{ flexDirection: 'row' }}>
           <Radio
             iconName={'lens'}
@@ -67,7 +67,7 @@ export default function NewDay({ navigation }) {
         </RadioGroup>
 
         <RadioGroup
-          getChecked={this.getChecked}
+          getChecked="0"
           RadioGroupStyle={{ flexDirection: 'row' }}>
           <Radio
             iconName={'lens'}
